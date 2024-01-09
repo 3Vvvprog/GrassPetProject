@@ -26,6 +26,7 @@ class SignInViewUI: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.moduleDidLoad()
+        signInView.bind()
         view.backgroundColor = MainConstanst.backgroundColor
         initialize()
         makeConstraints()
@@ -82,6 +83,19 @@ private extension SignInViewUI {
         signInView.vkButton.rx.tap.asDriver()
             .drive(onNext: { [unowned self] _ in
                 print("vk")
+            })
+            .disposed(by: db)
+        
+        
+            
+        
+        signInView.changePasswordSecuredButton.rx.tap
+            
+            .subscribe(onNext: { [unowned self] _ in
+                var secure = self.signInView.passwordTextField.isSecureTextEntry
+                secure = !secure
+                self.signInView.isPasswordSecured.accept(secure)
+                self.signInView.passwordTextField.isSecureTextEntry = secure
             })
             .disposed(by: db)
             

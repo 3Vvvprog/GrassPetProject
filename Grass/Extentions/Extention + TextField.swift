@@ -6,7 +6,7 @@ import UIKit
 final class CustomTextField: UITextField {
     
     
-    private let padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+    private let padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 40)
     
     init(placeholder: String) {
         super.init(frame: .zero)
