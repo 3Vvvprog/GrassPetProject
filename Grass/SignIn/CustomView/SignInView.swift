@@ -14,6 +14,9 @@ import RxSwift
 class SignInView: UIView {
     // MARK: - Private properties
     
+    var isPasswordSecured = PublishRelay<Bool>()
+    private var disposeBag = DisposeBag()
+    
     private var topLabel: UILabel = {
         let label = UILabel()
         label.text = "Вход в аккаунт"
@@ -42,6 +45,14 @@ class SignInView: UIView {
         label.isHidden = true
         return label
     }()
+    
+    var changePasswordSecuredButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    private var passwordSecuredImageView = UIImageView()
+    
     
     private var dontRememberPasswordButton: UIButton = {
         let button = UIButton(type: .system)
@@ -144,7 +155,9 @@ private extension SignInView {
         signInWithHelpView.addSubview(vkButton)
         vkButton.addSubview(vkView)
         vkView.image = UIImage.vk
-        
+        passwordTextField.addSubview(changePasswordSecuredButton)
+        changePasswordSecuredButton.addSubview(passwordSecuredImageView)
+        passwordSecuredImageView.image = UIImage.closedEye
         
         
        
@@ -228,6 +241,16 @@ private extension SignInView {
             make.directionalEdges.equalToSuperview().inset(8)
             make.height.width.equalTo(30)
         }
+        
+        changePasswordSecuredButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.trailing.equalToSuperview().inset(16)
+            make.width.height.equalTo(22)
+        }
+        
+        passwordSecuredImageView.snp.makeConstraints { make in
+            make.directionalEdges.equalToSuperview()
+        }
     }
     
     
@@ -281,6 +304,19 @@ extension SignInView {
         self.layoutIfNeeded()
             
         
+    }
+    
+    func bind() {
+        isPasswordSecured
+            .subscribe(onNext: { [unowned self] isSecure in
+                if isSecure {
+                    self.passwordSecuredImageView.image = UIImage.closedEye
+                }else {
+                    self.passwordSecuredImageView.image = UIImage.openedEye
+                }
+                self.passwordTextField.isSecureTextEntry = isSecure
+            })
+            .disposed(by: disposeBag)
     }
 }
 
