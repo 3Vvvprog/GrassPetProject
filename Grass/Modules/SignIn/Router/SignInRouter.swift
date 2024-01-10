@@ -9,9 +9,14 @@
 import UIKit
 
 protocol SignInRouterProtocol {
-    
+    func createAccount()
 }
 
 class SignInRouter: SignInRouterProtocol {
     weak var moduleViewController: UIViewController!
+    
+    func createAccount() {
+        let createAccountController = CreateAccountAssembly().build()
+        moduleViewController.navigationController?.pushViewController(createAccountController, animated: true)
+    }
 }

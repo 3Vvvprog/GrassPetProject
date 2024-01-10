@@ -15,6 +15,8 @@ protocol SignInViewModelProtocol {
     func isUserDataCorrect(email: String, password: String) -> LoginStates
     
     var isEmailValid: BehaviorRelay<Bool> { get set }
+    
+    func createAccount()
 }
 
 
@@ -42,21 +44,10 @@ class SignInViewModel: SignInViewModelProtocol {
 extension SignInViewModel {
     func isUserDataCorrect(email: String, password: String) -> LoginStates {
         return dbService.getLoginState(email: email, password: password)
-//        switch result {
-//        case .emailNotFound:
-//            break
-//        case .failure:
-//            break
-//        case .success:
-//            break
-//        default:
-//            break
-//        }
-        
-        
-        
     }
     
-    
+    func createAccount() {
+        self.router.createAccount()
+    }
     
 }
