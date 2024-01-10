@@ -10,6 +10,10 @@
 		3B104B012B43F92A009812C1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B104B002B43F92A009812C1 /* SignInView.swift */; };
 		3B10A7CD2B3B69CC00A8FB6B /* Extention + TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10A7CC2B3B69CC00A8FB6B /* Extention + TextField.swift */; };
 		3B10A7D02B3CAE3500A8FB6B /* MainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10A7CF2B3CAE3500A8FB6B /* MainConstants.swift */; };
+		3B62F6882B4E821D00E87FCF /* CreateAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6842B4E821D00E87FCF /* CreateAccountRouter.swift */; };
+		3B62F6892B4E821D00E87FCF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6852B4E821D00E87FCF /* CreateAccountViewController.swift */; };
+		3B62F68A2B4E821D00E87FCF /* CreateAccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6862B4E821D00E87FCF /* CreateAccountAssembly.swift */; };
+		3B62F68B2B4E821D00E87FCF /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6872B4E821D00E87FCF /* CreateAccountViewModel.swift */; };
 		3B8A02A92B488E0600093D4B /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A52B488E0600093D4B /* SignInRouter.swift */; };
 		3B8A02AB2B488E0600093D4B /* SignInAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A72B488E0600093D4B /* SignInAssembly.swift */; };
 		3B8A02AC2B488E0600093D4B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A82B488E0600093D4B /* SignInViewModel.swift */; };
@@ -32,6 +36,10 @@
 		3B104B002B43F92A009812C1 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		3B10A7CC2B3B69CC00A8FB6B /* Extention + TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention + TextField.swift"; sourceTree = "<group>"; };
 		3B10A7CF2B3CAE3500A8FB6B /* MainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConstants.swift; sourceTree = "<group>"; };
+		3B62F6842B4E821D00E87FCF /* CreateAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountRouter.swift; sourceTree = "<group>"; };
+		3B62F6852B4E821D00E87FCF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3B62F6862B4E821D00E87FCF /* CreateAccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountAssembly.swift; sourceTree = "<group>"; };
+		3B62F6872B4E821D00E87FCF /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
 		3B8A02A52B488E0600093D4B /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		3B8A02A72B488E0600093D4B /* SignInAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAssembly.swift; sourceTree = "<group>"; };
 		3B8A02A82B488E0600093D4B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +108,49 @@
 				3B10A7CF2B3CAE3500A8FB6B /* MainConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		3B62F6832B4E81C300E87FCF /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6902B4E82DC00E87FCF /* Router */,
+				3B62F68F2B4E82C600E87FCF /* View */,
+				3B62F68C2B4E822F00E87FCF /* StartModule */,
+				3B62F68D2B4E827500E87FCF /* ViewModel */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		3B62F68C2B4E822F00E87FCF /* StartModule */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6862B4E821D00E87FCF /* CreateAccountAssembly.swift */,
+			);
+			path = StartModule;
+			sourceTree = "<group>";
+		};
+		3B62F68D2B4E827500E87FCF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6872B4E821D00E87FCF /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3B62F68F2B4E82C600E87FCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6852B4E821D00E87FCF /* CreateAccountViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3B62F6902B4E82DC00E87FCF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6842B4E821D00E87FCF /* CreateAccountRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		3B8A02AD2B488E5800093D4B /* Router */ = {
@@ -180,7 +231,7 @@
 				3B104AFD2B43F84E009812C1 /* ViewToAllScreens */,
 				3B104AFE2B43F878009812C1 /* Extentions */,
 				3B10A7CE2B3CAE1800A8FB6B /* Constants */,
-				3B104AFF2B43F900009812C1 /* SignIn */,
+				3BD3ADB52B4DDF86005AF7EF /* Modules */,
 				3BD1D54E2B399F4900BB7422 /* Resources */,
 				3BD1D54D2B399F2900BB7422 /* Application */,
 			);
@@ -204,6 +255,15 @@
 				3BD1D5472B399EBB00BB7422 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3BD3ADB52B4DDF86005AF7EF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6832B4E81C300E87FCF /* CreateAccount */,
+				3B104AFF2B43F900009812C1 /* SignIn */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,14 +346,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B62F6892B4E821D00E87FCF /* CreateAccountViewController.swift in Sources */,
 				3B8A02A92B488E0600093D4B /* SignInRouter.swift in Sources */,
 				3B10A7D02B3CAE3500A8FB6B /* MainConstants.swift in Sources */,
 				3B104B012B43F92A009812C1 /* SignInView.swift in Sources */,
 				3B10A7CD2B3B69CC00A8FB6B /* Extention + TextField.swift in Sources */,
 				3BD1D53E2B399EB800BB7422 /* SignInViewUI.swift in Sources */,
 				3BD1D53A2B399EB800BB7422 /* AppDelegate.swift in Sources */,
+				3B62F68A2B4E821D00E87FCF /* CreateAccountAssembly.swift in Sources */,
 				3BBF70872B474F7000AFB788 /* SignInDbService.swift in Sources */,
+				3B62F68B2B4E821D00E87FCF /* CreateAccountViewModel.swift in Sources */,
 				3B8A02BA2B4AB5B900093D4B /* SignInModel.swift in Sources */,
+				3B62F6882B4E821D00E87FCF /* CreateAccountRouter.swift in Sources */,
 				3B8A02B02B4896E000093D4B /* Extention + Email.swift in Sources */,
 				3BD1D5542B39A10A00BB7422 /* TopView.swift in Sources */,
 				3B8A02AC2B488E0600093D4B /* SignInViewModel.swift in Sources */,

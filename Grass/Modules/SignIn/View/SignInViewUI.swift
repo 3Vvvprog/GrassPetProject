@@ -70,7 +70,7 @@ private extension SignInViewUI {
         
         signInView.signUpButton.rx.tap.asDriver()
             .drive(onNext: { [unowned self] _ in
-                print(1)
+                self.viewModel.createAccount()
             })
             .disposed(by: db)
         
