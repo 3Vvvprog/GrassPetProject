@@ -14,6 +14,7 @@
 		3B62F6892B4E821D00E87FCF /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6852B4E821D00E87FCF /* CreateAccountViewController.swift */; };
 		3B62F68A2B4E821D00E87FCF /* CreateAccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6862B4E821D00E87FCF /* CreateAccountAssembly.swift */; };
 		3B62F68B2B4E821D00E87FCF /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6872B4E821D00E87FCF /* CreateAccountViewModel.swift */; };
+		3B62F6932B4E968900E87FCF /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62F6922B4E968900E87FCF /* CreateAccountView.swift */; };
 		3B8A02A92B488E0600093D4B /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A52B488E0600093D4B /* SignInRouter.swift */; };
 		3B8A02AB2B488E0600093D4B /* SignInAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A72B488E0600093D4B /* SignInAssembly.swift */; };
 		3B8A02AC2B488E0600093D4B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8A02A82B488E0600093D4B /* SignInViewModel.swift */; };
@@ -40,6 +41,7 @@
 		3B62F6852B4E821D00E87FCF /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		3B62F6862B4E821D00E87FCF /* CreateAccountAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountAssembly.swift; sourceTree = "<group>"; };
 		3B62F6872B4E821D00E87FCF /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		3B62F6922B4E968900E87FCF /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		3B8A02A52B488E0600093D4B /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		3B8A02A72B488E0600093D4B /* SignInAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAssembly.swift; sourceTree = "<group>"; };
 		3B8A02A82B488E0600093D4B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		3B62F6832B4E81C300E87FCF /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
+				3B62F6912B4E95EF00E87FCF /* CustomViews */,
 				3B62F6902B4E82DC00E87FCF /* Router */,
 				3B62F68F2B4E82C600E87FCF /* View */,
 				3B62F68C2B4E822F00E87FCF /* StartModule */,
@@ -151,6 +154,14 @@
 				3B62F6842B4E821D00E87FCF /* CreateAccountRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		3B62F6912B4E95EF00E87FCF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3B62F6922B4E968900E87FCF /* CreateAccountView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		3B8A02AD2B488E5800093D4B /* Router */ = {
@@ -358,6 +369,7 @@
 				3B62F68B2B4E821D00E87FCF /* CreateAccountViewModel.swift in Sources */,
 				3B8A02BA2B4AB5B900093D4B /* SignInModel.swift in Sources */,
 				3B62F6882B4E821D00E87FCF /* CreateAccountRouter.swift in Sources */,
+				3B62F6932B4E968900E87FCF /* CreateAccountView.swift in Sources */,
 				3B8A02B02B4896E000093D4B /* Extention + Email.swift in Sources */,
 				3BD1D5542B39A10A00BB7422 /* TopView.swift in Sources */,
 				3B8A02AC2B488E0600093D4B /* SignInViewModel.swift in Sources */,
@@ -432,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -488,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
