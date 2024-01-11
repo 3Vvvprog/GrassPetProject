@@ -17,6 +17,7 @@ class CreateAccountViewController: UIViewController {
     private let topView = TopView()
     private let createAccountView = CreateAccountView() // Выбор между Ищу работу/Ищу сотрудника
     private let createAccountStep2View = CreateAccountStep2View() // Ввод почты для регистрации
+    private let createAccountStep3View = CreateAccountStep3View() // Проверка кода подтверждения
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class CreateAccountViewController: UIViewController {
         initialize()
         makeConstraints()
         buttonAction()
+        bind()
     }
     
     deinit {
@@ -43,6 +45,8 @@ private extension CreateAccountViewController {
         view.addSubview(createAccountView)
         view.addSubview(createAccountStep2View)
         createAccountStep2View.isHidden = true
+        view.addSubview(createAccountStep3View)
+        createAccountStep3View.isHidden = true
         
     }
     
@@ -66,22 +70,18 @@ private extension CreateAccountViewController {
             make.height.equalTo(380)
         }
         
+        createAccountStep3View.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(topView.snp.bottom).offset(32)
+            make.height.equalTo(424)
+        }
+        
     }
     
     func buttonAction() {
         
         // CreateAccountView
-        createAccountView.searchJobButton.rx.tap
-            .subscribe(onNext: { [ unowned self ] _ in
-                self.createAccountView.setSearchJobActive()
-            })
-            .disposed(by: disposeBag)
         
-        createAccountView.searchWorkersButton.rx.tap
-            .subscribe(onNext: { [ unowned self ] _ in
-                self.createAccountView.setSearchWorkersActive()
-            })
-            .disposed(by: disposeBag)
         
         createAccountView.continueButton.rx.tap
             .subscribe(onNext: { [ unowned self ] _ in
@@ -99,23 +99,51 @@ private extension CreateAccountViewController {
         // CreateAccountStep2View
         
         createAccountStep2View.continueButton.rx.tap
-            .subscribe(onNext: { [ unowned self ] _ in
-                if !createAccountStep2View.emailTextField.text!.isEmail() {
-                    createAccountStep2View.emailTextField.layer.borderColor = UIColor.systemRed.cgColor
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [ weak self]  in
-                        self?.createAccountStep2View.emailTextField.layer.borderColor = Constants.borderColor
-                    }
-                }
+            .subscribe(onNext: { [ weak self ] _ in
+//                if !self!.createAccountStep2View.emailTextField.text!.isEmail() {
+//                    self?.createAccountStep2View.emailTextField.layer.borderColor = UIColor.systemRed.cgColor
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [ weak self]  in
+//                        self?.createAccountStep2View.emailTextField.layer.borderColor = Constants.borderColor
+//                    }
+//                }else 
+//                {
+                    self?.createAccountStep2View.isHidden = true
+                    self?.createAccountStep3View.isHidden = false
+                
+                    self?.createAccountStep3View.startTimer()
+//                }
             })
             .disposed(by: disposeBag)
         
         createAccountStep2View.backButton.rx.tap
-            .subscribe(onNext: { [ unowned self ] _ in
-                self.createAccountView.isHidden = false
-                self.createAccountStep2View.isHidden = true
+            .subscribe(onNext: { [ weak self ] _ in
+                self?.createAccountView.isHidden = false
+                self?.createAccountStep2View.isHidden = true
+            })
+            .disposed(by: disposeBag)
+        
+        
+        // CreateAccountStep3View
+        
+        createAccountStep3View.continueButton.rx.tap
+            .subscribe(onNext: { [ weak self ] _ in
+                
+            })
+            .disposed(by: disposeBag)
+        
+        createAccountStep3View.backButton.rx.tap
+            .subscribe(onNext: { [ weak self ] _ in
+                self?.createAccountStep2View.isHidden = false
+                self?.createAccountStep3View.isHidden = true
             })
             .disposed(by: disposeBag)
     }
+    
+    func bind() {
+        
+    }
 }
+
+
 
 
