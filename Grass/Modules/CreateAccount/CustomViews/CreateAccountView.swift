@@ -13,6 +13,8 @@ import RxSwift
 
 class CreateAccountView: UIView {
     
+    private let disposeBag = DisposeBag()
+    
     private var topLabel: UILabel = {
         let label = UILabel()
         label.text = "Создание аккаунта"
@@ -90,7 +92,7 @@ class CreateAccountView: UIView {
         layer.cornerRadius = 20
         initialize()
         makeConstraints()
-        
+        actionButton()
     }
     
     enum Constants {
@@ -187,6 +189,22 @@ extension CreateAccountView {
         UIView.animate(withDuration: 0.6) {
             self.layoutIfNeeded()
         }
+    }
+}
+
+private extension CreateAccountView {
+    func actionButton() {
+        searchJobButton.rx.tap
+            .subscribe(onNext: { [ weak self ] _ in
+                self?.setSearchJobActive()
+            })
+            .disposed(by: disposeBag)
+        
+        searchWorkersButton.rx.tap
+            .subscribe(onNext: { [ weak self ] _ in
+                self?.setSearchWorkersActive()
+            })
+            .disposed(by: disposeBag)
     }
 }
 

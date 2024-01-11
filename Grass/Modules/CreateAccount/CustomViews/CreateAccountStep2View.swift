@@ -43,13 +43,6 @@ class CreateAccountStep2View: UIView {
     
     var emailTextField: UITextField = CustomTextField(placeholder: "Электронная почта")
     
-    private var buttonsActiveView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.backgroundColor = UIColor(red: 0.914, green: 0.929, blue: 0.938, alpha: 1)
-        return view
-    }()
-    
     var continueButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 14
@@ -135,8 +128,10 @@ private extension CreateAccountStep2View {
 }
 
 
-extension CreateAccountStep2View {
-    
+private extension CreateAccountStep2View {
+    func actionButton() {
+        
+    }
 }
 
 
